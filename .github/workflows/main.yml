@@ -19,7 +19,7 @@ jobs:
       run: npx playwright install --with-deps
     - name: Run Playwright tests
       env:
-          NODE_OPTIONS: "--max-old-space-size=8192"
+          NODE_OPTIONS: "--max-old-space-size=10240"
       run: npx playwright test --project="chromium"
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
